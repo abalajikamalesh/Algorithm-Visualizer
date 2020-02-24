@@ -99,6 +99,31 @@
   cursor: pointer;
 }
 
+#sortSpeed {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;;
+  display: inline-block;
+  margin-left: 125px;
+}
+
+#changeSpeed {
+  outline: none;
+  margin-right: 15px;
+  height: 15px;
+  background-color: black;
+  -webkit-appearance: none;
+}
+
+#changeSpeed::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  background:red;
+  cursor: pointer;
+}
+
 input[type=range] {
   border: 1px solid white;
   width: 100px;

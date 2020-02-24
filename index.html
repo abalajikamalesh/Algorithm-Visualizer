@@ -17,12 +17,12 @@
         </div>
         <div class="separator"></div>
         <div id="arraySize" style="color: white;">Change Array Size and Speed </div>
-        <input type="range" min="10" max="70" id="changeSize" value="30" style="background: white; cursor: pointer;">
+        <input type="range" min="10" max="100" id="changeSize" value="30" style="background: white; cursor: pointer;">
         <div class="separator"></div>
-        <div class="algorithmButton" onclick="bubbleSort(700/(1.5*slider.value));">Bubble Sort</div>
-        <div class="algorithmButton" onclick="selectionSort(700/(1.5*slider.value));">Selection Sort</div>
-        <div class="algorithmButton" onclick="quickSort(700/(1.5*slider.value));">Quick Sort</div>
-        <div class="algorithmButton" onclick="insertionSort(700/(1.5*slider.value));">Insertion Sort</div>
+        <div class="algorithmButton" onclick="bubbleSort(10);">Bubble Sort</div>
+        <div class="algorithmButton" onclick="selectionSort(10);">Selection Sort</div>
+        <div class="algorithmButton" onclick="quickSort(10);">Quick Sort</div>
+        <div class="algorithmButton" onclick="insertionSort(10);">Insertion Sort</div>
         <div class="algorithmButton" onclick="linearSearch(searchInputValue)">Linear Search</div>
         <div class="algorithmButton" onclick="binarySearch(searchInputValue)">Binary Search</div>
     </div>
@@ -30,6 +30,8 @@
         <form>
             <label for="search">Searching For:</label>
             <input type="number" id="search" name="search" placeholder="Enter a number...">
+            <div id="sortSpeed">Sorting Speed </div>
+            <input type="range" min="1" max="10" id="changeSpeed" value="1" style=" cursor: pointer;">
             <input type="button" title="To start afresh" onclick="generateBlockUtil()" value="Generate Random Array with same size">
         </form>
     </section>

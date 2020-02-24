@@ -1,4 +1,10 @@
 var algos = document.getElementsByClassName("algorithmButton");
+var sortSpeed = document.getElementById("changeSpeed");
+var sortSpeedValue = 1;
+
+sortSpeed.addEventListener("input",function(){
+  sortSpeedValue = this.value;
+})
 
 for (var i = 0; i < algos.length; i++) {
   algos[i].addEventListener("click", function() {
@@ -29,7 +35,7 @@ function swap(el1, el2) {
           el1.replaceWith(clonedElement2);
           el2.replaceWith(clonedElement1);
           resolve();
-        }, 50);
+        }, 1000/(3*sortSpeedValue*sortSpeedValue));
       });
     });
   }
