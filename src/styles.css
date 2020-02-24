@@ -112,8 +112,8 @@ input[type=range] {
   font-size: 16px;
   font-family: 'Poppins', sans-serif;;
   display: inline-block;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   cursor: pointer;
 }
 
