@@ -80,7 +80,7 @@ searchInput.addEventListener("input",function(){
     searchInput.style.border = '';
 
 
-    await quickSort();
+    await quickSort(1);
     let blocks = document.querySelectorAll(".block");
     blocks.forEach(function(el,index){
         blocks[index].style.backgroundColor = "#58b7ff";

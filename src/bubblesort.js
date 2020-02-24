@@ -29,12 +29,13 @@ function swap(el1, el2) {
           el1.replaceWith(clonedElement2);
           el2.replaceWith(clonedElement1);
           resolve();
-        }, 5);
+        }, 50);
       });
     });
   }
   
   async function bubbleSort(delay) {
+
     let blocks = document.querySelectorAll(".block");
     
     // disable menu
@@ -85,7 +86,7 @@ function swap(el1, el2) {
           await new Promise(resolve =>
             setTimeout(() => {
               resolve();
-            }, delay)
+            }, 0.1*delay)
           );
     
           const value1 = Number(blocks[j].childNodes[0].innerHTML);
