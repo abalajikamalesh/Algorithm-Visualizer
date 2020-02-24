@@ -48,14 +48,14 @@ async function insertionSort(delay) {
                         blocks[j].style.backgroundColor = "#FF4949";
                         blocks[j-1].style.backgroundColor = "#FF4949";
                         
+                        await new Promise(resolve =>
+                          setTimeout(() => {
+                            resolve();
+                          }, 2*delay)
+                        );
+
                         await swap(blocks[j], blocks[j - 1]);
                         blocks = document.querySelectorAll(".block");
-
-                        await new Promise(resolve =>
-                            setTimeout(() => {
-                              resolve();
-                            }, delay)
-                          );
                         
                         blocks[j].style.backgroundColor = "#58B7FF";
                         blocks[j-1].style.backgroundColor = "#58B7FF";

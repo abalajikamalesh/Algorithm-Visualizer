@@ -16,13 +16,13 @@
               <span> ALGORITHM VISUALIZER<span>
         </div>
         <div class="separator"></div>
-        <div id="arraySize" style="color: white;">Change Array Size </div>
+        <div id="arraySize" style="color: white;">Change Array Size and Speed </div>
         <input type="range" min="10" max="100" id="changeSize" value="30" style="background: white; cursor: pointer;">
         <div class="separator"></div>
-        <div class="algorithmButton" onclick="bubbleSort(500/slider.value);">Bubble Sort</div>
-        <div class="algorithmButton" onclick="selectionSort(500/slider.value);">Selection Sort</div>
-        <div class="algorithmButton" onclick="quickSort(500/slider.value);">Quick Sort</div>
-        <div class="algorithmButton" onclick="insertionSort(500/slider.value);">Insertion Sort</div>
+        <div class="algorithmButton" onclick="bubbleSort(700/(1.5*slider.value));">Bubble Sort</div>
+        <div class="algorithmButton" onclick="selectionSort(700/(1.5*slider.value));">Selection Sort</div>
+        <div class="algorithmButton" onclick="quickSort(700/(1.5*slider.value));">Quick Sort</div>
+        <div class="algorithmButton" onclick="insertionSort(700/(1.5*slider.value));">Insertion Sort</div>
         <div class="algorithmButton" onclick="linearSearch(searchInputValue)">Linear Search</div>
         <div class="algorithmButton" onclick="binarySearch(searchInputValue)">Binary Search</div>
     </div>
