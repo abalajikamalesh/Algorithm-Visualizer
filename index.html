@@ -19,10 +19,11 @@
         <div id="arraySize" style="color: white;">Change Array Size and Speed </div>
         <input type="range" min="10" max="100" id="changeSize" value="30" style="background: white; cursor: pointer;">
         <div class="separator"></div>
-        <div class="algorithmButton" onclick="bubbleSort(10);">Bubble Sort</div>
-        <div class="algorithmButton" onclick="selectionSort(10);">Selection Sort</div>
-        <div class="algorithmButton" onclick="quickSort(10);">Quick Sort</div>
-        <div class="algorithmButton" onclick="insertionSort(10);">Insertion Sort</div>
+        <div class="algorithmButton" onclick="bubbleSort(10);">Bubble</div>
+        <div class="algorithmButton" onclick="selectionSort(10);">Selection</div>
+        <div class="algorithmButton" onclick="quickSort(10);">Quick</div>
+        <div class="algorithmButton" onclick="insertionSort(10);">Insertion</div>
+        <div class="algorithmButton" onclick="cocktailSort(10);">Cocktail</div>
         <div class="algorithmButton" onclick="linearSearch(searchInputValue)">Linear Search</div>
         <div class="algorithmButton" onclick="binarySearch(searchInputValue)">Binary Search</div>
     </div>
@@ -39,6 +40,7 @@
     <section id="result" class="resultStyle"></section>
 </body>
 <script src="src/quicksort.js"></script>
+<script src="src/cocktailsort.js"></script>
 <script src="src/insertionsort.js"></script>
 <script src="src/sliderEvent.js"></script>
 <script src="src/bubblesort.js"></script>
