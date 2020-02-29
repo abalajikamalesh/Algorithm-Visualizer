@@ -12,6 +12,7 @@
   p,h3{
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
+    margin: 0.8%;
   }
 
   input[type=number] {
@@ -24,14 +25,23 @@
     box-sizing: border-box;
   }
   
-  .data-container,.searchSection,.resultStyle{
-    height: 320px;
+  .data-container,.searchSection,.resultStyle,.warningStyle{
+    height: 300px;
     position: relative;
     margin-left: 10%;
   }
 
+  /* .data-container{
+    overflow-x: scroll;
+  } */
+
+  .warningStyle{
+    height: 40px;
+    font-family: 'Poppins', sans-serif;;
+  }
+
   .searchSection{
-    padding-top: 2%;
+    /* padding-top: 2%; */
     height: 90px;
     font-family: 'Poppins', sans-serif;;
   }

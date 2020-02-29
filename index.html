@@ -17,7 +17,7 @@
         </div>
         <div class="separator"></div>
         <div id="arraySize" style="color: white;">Change Array Size and Speed </div>
-        <input type="range" min="10" max="100" id="changeSize" value="30" style="background: white; cursor: pointer;">
+        <input type="range" min="10" max="500" id="changeSize" value="30" style="background: white; cursor: pointer;">
         <div class="separator"></div>
         <div class="algorithmButton" onclick="bubbleSort(10);">Bubble</div>
         <div class="algorithmButton" onclick="selectionSort(10);">Selection</div>
@@ -33,9 +33,10 @@
             <input type="number" id="search" name="search" placeholder="Enter a number...">
             <div id="sortSpeed">Sorting Speed </div>
             <input type="range" min="1" max="10" id="changeSpeed" value="1" style=" cursor: pointer;">
-            <input type="button" title="To start afresh" onclick="generateBlockUtil()" value="Generate Random Array with same size">
+            <input type="button" id="genBlocks" title="To start afresh" onclick="generateBlockUtil()" value="Generate Random Array with same size">
         </form>
     </section>
+    <section id="warning" class="warningStyle"></section>
     <section class="data-container"></section>
     <section id="result" class="resultStyle"></section>
 </body>
@@ -46,4 +47,5 @@
 <script src="src/bubblesort.js"></script>
 <script src="src/selectionsort.js"></script>
 <script src="src/searching.js"></script>
+<script src="src/utilityFunctions.js"></script>
 </html>

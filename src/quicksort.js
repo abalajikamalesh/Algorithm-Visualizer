@@ -2,11 +2,11 @@ async function quickSort(delay) {
 
   let blocks = document.querySelectorAll(".block");
 
+  if(blocks.length > 250)
+    delay = delay/8;
+
     // disable menu
-    document.getElementById("changeSize").disabled = true;
-    for (var i = 0; i < algos.length; i++) {
-        algos[i].className += " disableClick";
-    }
+    disableMenu();
 
     // reset results section
     document.getElementById("result").innerHTML = '';
@@ -18,22 +18,14 @@ async function quickSort(delay) {
     for(i=0;i<blocks.length;i++){
       arr.push(Number(blocks[i].childNodes[0].innerHTML));
     }
-    const isSorted = arr.slice(1).every((item, i) => arr[i] <= item);
 
-    if(isSorted){ 
+    if(isSorted(arr)){ 
 
       res.innerHTML = 'Array is already Sorted!!';
       result.appendChild(res);
       
       // enable menu
-      for (var k = 0; k < algos.length; k++) {
-        algos[k].className = algos[k].className.replace("disableClick","");
-      }
-      var current = document.getElementsByClassName("highlight");
-      if (current.length > 0) {
-        current[0].className = current[0].className.replace(" highlight", "");
-      }
-      document.getElementById("changeSize").disabled = false;
+      enableMenu();
     
     } else {
 
@@ -56,30 +48,47 @@ async function quickSort(delay) {
             var p; 
             var x = Number(blocks[h].childNodes[0].innerHTML);
             var i = (l - 1); 
-        
-            for (var j = l; j <= h - 1; j++) { 
-                blocks[i+1].style.backgroundColor = "#FF4949";
-                blocks[j].style.backgroundColor = "#FF4949";
-                
-                await new Promise(resolve =>
-                    setTimeout(() => {
-                      resolve();
-                    }, delay)
-                  );
+
+            blocks[h].style.backgroundColor = "#FF4949";
+            await new Promise(resolve =>
+              setTimeout(() => {
+                resolve();
+              }, delay)
+            );
+            blocks[h].style.backgroundColor = "#58B7FF";
+
+            for (var j = l; j <= h - 1; j++) {                 
                 
                 if (Number(blocks[j].childNodes[0].innerHTML) <= x) { 
                     i++; 
                     await swap(blocks[i], blocks[j]); 
                     blocks = document.querySelectorAll(".block");
                 } 
-                
-                blocks[i+1].style.backgroundColor = "#58B7FF";
-                blocks[j].style.backgroundColor = "#58B7FF";
             } 
+
+            blocks[i+1].style.backgroundColor = "#FF4949";
+            blocks[h].style.backgroundColor = "#FF4949";
+
             await swap(blocks[i + 1], blocks[h]); 
             blocks = document.querySelectorAll(".block");
 
-            p = (i + 1); 
+            await new Promise(resolve =>
+              setTimeout(() => {
+                resolve();
+              }, 5*delay)
+            );
+
+            blocks[i+1].style.backgroundColor = "#58B7FF";
+            blocks[h].style.backgroundColor = "#58B7FF";
+
+            blocks[i+1].style.backgroundColor = "#13CE66";
+            blocks[h].style.backgroundColor = "#13CE66";
+            
+            if(i>0 && h>1){
+              blocks[i].style.backgroundColor = "#13CE66";
+              blocks[h-1].style.backgroundColor = "#13CE66";
+            }
+            p = (i + 1);      
 
             if (p - 1 > l) {  
                 stack.push(l);
@@ -92,10 +101,6 @@ async function quickSort(delay) {
             } 
         } 
 
-        blocks.forEach(function(el,index){
-            blocks[blocks.length -1 - index].style.backgroundColor = "#13CE66";
-        })
-
         res.innerHTML = res.innerHTML + ` Sorting Complete!!`;
         var end = performance.now();
         let time = document.createElement('p');
@@ -103,14 +108,6 @@ async function quickSort(delay) {
         res.appendChild(time);
 
         // enable menu and remove highlight
-        for (k = 0; k < algos.length; k++) {
-            algos[k].className = algos[k].className.replace("disableClick","");
-          }
-
-          current = document.getElementsByClassName("highlight");
-        if (current.length > 0) {
-          current[0].className = current[0].className.replace(" highlight", "");
-        }
-        document.getElementById("changeSize").disabled = false;
+        enableMenu();
       }
   }

@@ -18,6 +18,13 @@ searchInput.addEventListener("input",function(){
 
     let blocks = document.querySelectorAll(".block");
 
+    // disable menu
+    document.getElementById("changeSize").disabled = true;
+    for (var i = 0; i < algos.length; i++) {
+      algos[i].className += " disableClick";
+    }
+    document.getElementById("genBlocks").disabled = true;
+
     // reset result section
     document.getElementById("result").innerHTML = '';
     let result = document.getElementById("result");
@@ -57,6 +64,7 @@ searchInput.addEventListener("input",function(){
       time.innerHTML = `Element not found`;
     
     res.appendChild(time);
+    //enable menu
     current = document.getElementsByClassName("highlight");
     if (current.length > 0) {
       current[0].className = current[0].className.replace(" highlight", "");
@@ -65,6 +73,7 @@ searchInput.addEventListener("input",function(){
       algos[k].className = algos[k].className.replace("disableClick","");
     }
     document.getElementById("changeSize").disabled = false;
+    document.getElementById("genBlocks").disabled = false;
   }
 
   async function binarySearch(num){
@@ -85,9 +94,12 @@ searchInput.addEventListener("input",function(){
     blocks.forEach(function(el,index){
         blocks[index].style.backgroundColor = "#58b7ff";
     })
+    // disable menu
+    document.getElementById("changeSize").disabled = true;
     for (var i = 0; i < algos.length; i++) {
       algos[i].className += " disableClick";
     }
+    document.getElementById("genBlocks").disabled = true;
 
     let result = document.getElementById("result");
     let res = document.createElement('h3');
@@ -136,6 +148,7 @@ searchInput.addEventListener("input",function(){
       time.innerHTML = `Element not found`;
     
     res.appendChild(time);
+    //enable menu
     current = document.getElementsByClassName("highlight");
     if (current.length > 0) {
       current[0].className = current[0].className.replace(" highlight", "");
@@ -143,5 +156,6 @@ searchInput.addEventListener("input",function(){
     for (var k = 0; k < algos.length; k++) {
       algos[k].className = algos[k].className.replace("disableClick","");
     }
-    document.getElementById("changeSize").disabled = false;     
+    document.getElementById("changeSize").disabled = false;
+    document.getElementById("genBlocks").disabled = false;   
   }

@@ -1,11 +1,11 @@
 async function cocktailSort(delay) {
     let blocks = document.querySelectorAll(".block");
+
+    if(blocks.length > 250)
+      delay = delay/8;
   
       // disable menu
-      document.getElementById("changeSize").disabled = true;
-      for (var i = 0; i < algos.length; i++) {
-        algos[i].className += " disableClick";
-      }
+      disableMenu();
   
       // reset results section
       document.getElementById("result").innerHTML = '';
@@ -17,22 +17,14 @@ async function cocktailSort(delay) {
         for(i=0;i<blocks.length;i++){
           arr.push(Number(blocks[i].childNodes[0].innerHTML));
         }
-        const isSorted = arr.slice(1).every((item, i) => arr[i] <= item);
   
-        if(isSorted){
+        if(isSorted(arr)){
   
             res.innerHTML = 'Array is already Sorted!!!';
             result.appendChild(res);
             
             // enable menu
-            for (var k = 0; k < algos.length; k++) {
-              algos[k].className = algos[k].className.replace("disableClick","");
-            }
-            var current = document.getElementsByClassName("highlight");
-            if (current.length > 0) {
-              current[0].className = current[0].className.replace(" highlight", "");
-            }
-            document.getElementById("changeSize").disabled = false;
+            enableMenu();
   
         } else {
   
@@ -107,14 +99,7 @@ async function cocktailSort(delay) {
                 res.appendChild(time);
   
                 // enable menu and remove highlight
-                for (k = 0; k < algos.length; k++) {
-                  algos[k].className = algos[k].className.replace("disableClick","");
-                }
-                current = document.getElementsByClassName("highlight");
-                if (current.length > 0) {
-                  current[0].className = current[0].className.replace(" highlight", "");
-                }
-                document.getElementById("changeSize").disabled = false;
+                enableMenu();
   
       }
     }

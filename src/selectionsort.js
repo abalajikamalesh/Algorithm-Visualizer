@@ -2,10 +2,7 @@ async function selectionSort(delay) {
   let blocks = document.querySelectorAll(".block");
 
     // disable menu
-    document.getElementById("changeSize").disabled = true;
-    for (var i = 0; i < algos.length; i++) {
-      algos[i].className += " disableClick";
-    }
+    disableMenu();
 
     // reset results section
     document.getElementById("result").innerHTML = '';
@@ -25,14 +22,7 @@ async function selectionSort(delay) {
           result.appendChild(res);
           
           // enable menu
-          for (var k = 0; k < algos.length; k++) {
-            algos[k].className = algos[k].className.replace("disableClick","");
-          }
-          var current = document.getElementsByClassName("highlight");
-          if (current.length > 0) {
-            current[0].className = current[0].className.replace(" highlight", "");
-          }
-          document.getElementById("changeSize").disabled = false;
+          enableMenu();
 
       } else {
 
@@ -75,14 +65,7 @@ async function selectionSort(delay) {
               res.appendChild(time);
 
               // enable menu and remove highlight
-              for (k = 0; k < algos.length; k++) {
-                algos[k].className = algos[k].className.replace("disableClick","");
-              }
-              current = document.getElementsByClassName("highlight");
-              if (current.length > 0) {
-                current[0].className = current[0].className.replace(" highlight", "");
-              }
-              document.getElementById("changeSize").disabled = false;
+              enableMenu();
 
     }
   }
