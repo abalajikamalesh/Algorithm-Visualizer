@@ -1,6 +1,6 @@
 var algos = document.getElementsByClassName("algorithmButton");
 var sortSpeed = document.getElementById("changeSpeed");
-var sortSpeedValue = 1;
+var sortSpeedValue = 10;
 
 sortSpeed.addEventListener("input",function(){
   sortSpeedValue = this.value;
