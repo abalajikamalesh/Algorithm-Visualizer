@@ -1,8 +1,4 @@
 
-  body {
-    width: 1600px;
-  }
-
   .header {
     margin-top: 20px;
     text-align: center;
@@ -31,8 +27,8 @@
   
   .data-container,.searchSection,.resultStyle,.warningStyle{
     height: 300px;
+    margin: 0 15%;
     position: relative;
-    margin-left: 10%;
   }
 
   /* .data-container{
